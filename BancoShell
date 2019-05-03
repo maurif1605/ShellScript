@@ -1,0 +1,33 @@
+```
+
+echo "Banco Shell Script"
+echo "Digite o nome"
+read seunome
+echo "Buscando informacao..."
+ 
+if [ $seunome = "london" -o $seunome = "lisbon" -o $seunome = "newyork" -o $seunome = "vienna" ]; then
+        echo "nome encontrado"
+        wget https://raw.githubusercontent.com/leandersonandre/shell-script/master/lista_usuarios.txt
+        wget https://github.com/leandersonandre/shell-script/blob/master/lisbon.tar.gz?raw=true
+        wget https://github.com/leandersonandre/shell-script/blob/master/newyork.tar.gz?raw=true
+        wget https://github.com/leandersonandre/shell-script/blob/master/london..tar.gz?raw=true
+        wget https://github.com/leandersonandre/shell-script/blob/master/vienna..tar.gz?raw=true
+        gzip -d saldo.txt
+        gzip -d extrato.txt
+        echo "Download completo..."
+        echo "digite a opcao desejada 1 - saldo ou 2 - extrato ou 3 - exclui arq"
+        read x
+        if [ x = "1" ]; then
+                vi saldo.txt
+        elif [ x = "2" ]; then
+                vi extrato.txt
+        elif [ x = "3" ]; then
+                echo "excluindo arquivos"
+                rm saldo.txt extrato.txt
+                echo "obrigado, volte sempre"
+                echo "Banco Shell Script"
+        fi
+elif [ $seunome != "london" -o $seunome != "lisbon" -o $seunome != "newyork" -o $seunome != "vienna" ]
+        echo "nao encontrado"
+        
+```
